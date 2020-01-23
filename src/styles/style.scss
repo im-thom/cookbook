@@ -12,3 +12,76 @@ a {
 ol, ul {
 	list-style: none;
 }
+
+img {
+	width: 100%;
+	height: auto;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+div.container {
+	margin: 20px;
+}
+
+.card {
+	background-color: inherit;
+	border-radius: 10px;
+}
+
+div.recipe-grid {
+	display: grid;
+	grid-gap: 20px;
+    grid-template-columns: 1fr;
+	
+	a.recipe-card {
+		width: calc(100% - 80px);
+		margin-left: 40px;
+		padding: 20px 20px 40px 20px;
+		background-color: #d8d8d8;
+		position: relative;
+		transition: 0.3s ease-in-out;
+		
+		div.col-container {
+			display: flex;
+		    flex-direction: row;
+			align-items: flex-end;
+			
+			div.col {
+				
+				img.recipe-img {
+					width: 188px;
+					margin-left: -60px;
+					transition: 0.3s ease-in-out;
+				}
+				
+				h2.recipe-name {
+					font-size: 24px;
+					font-family: sans-serif;
+					margin-bottom: 20px;
+				}
+				
+				div.recipe-info {
+					display: flex;
+					
+					p:first-child {
+						margin-right: 80px;
+					}
+				}
+			}
+			
+			#recipe-content {
+				width: 30%;
+				margin-left: 40px;
+			}
+		}
+	}
+	
+	a.recipe-card:hover {
+		width: calc(100% - 40px);
+		margin-left: 0px;
+	}
+	
+	a.recipe-card:hover > div.col-container > div.col > img.recipe-img {
+		margin-left: 0;
+	}
+}
