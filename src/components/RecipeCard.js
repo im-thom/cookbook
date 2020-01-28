@@ -1,4 +1,5 @@
 import React from 'react';
+import FilterTag from './FilterTag';
 
 const RecipeCard = (props) => {
 	return (
@@ -10,10 +11,17 @@ const RecipeCard = (props) => {
 				<div className="col" id="recipe-content">
 					<h2 className="recipe-name">{props.recipeName}</h2>
 					<div className="recipe-info">
-						<p>{props.recipeCookTime}</p>
-						<p>{props.recipeRating}</p>
+						<p>{props.recipeCookTime} | {props.recipeRating}</p>
 					</div>
 				</div>
+			</div>
+			<div className="filters">
+				<FilterTag
+					tagName="amer."
+				/>
+				<FilterTag
+					tagName="$$$"
+				/>
 			</div>
 		</a>
 	);
