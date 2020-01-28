@@ -1,10 +1,47 @@
 import React from 'react';
 import RecipeCard from './components/RecipeCard';
+import FilterTag from './components/FilterTag';
 
 const App = () => {
 	return (
 		<div className="container">
 			<div className="recipe-grid">
+				<RecipeCard
+					recipeName="Recipe Name"
+					recipeImg={"/images/food.jpg"}
+					recipeCookTime={"10min."}
+					recipeRating={"****"}
+				/>
+				<RecipeCard
+					recipeName="Another Recipe"
+					recipeImg={"/images/food.jpg"}
+					recipeCookTime={"45min."}
+					recipeRating={"*****"}
+				/>
+				<RecipeCard
+					recipeName="Recipe Name"
+					recipeImg={"/images/food.jpg"}
+					recipeCookTime={"10min."}
+					recipeRating={"****"}
+				/>
+				<RecipeCard
+					recipeName="Another Recipe"
+					recipeImg={"/images/food.jpg"}
+					recipeCookTime={"45min."}
+					recipeRating={"*****"}
+				/>
+				<RecipeCard
+					recipeName="Recipe Name"
+					recipeImg={"/images/food.jpg"}
+					recipeCookTime={"10min."}
+					recipeRating={"****"}
+				/>
+				<RecipeCard
+					recipeName="Another Recipe"
+					recipeImg={"/images/food.jpg"}
+					recipeCookTime={"45min."}
+					recipeRating={"*****"}
+				/>
 				<RecipeCard
 					recipeName="Recipe Name"
 					recipeImg={"/images/food.jpg"}
