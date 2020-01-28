@@ -43,6 +43,29 @@ div.container {
 }
 
 /*
+	SEARCH BAR STYLING
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+form.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+form.search-form input.search-bar {
+  font-size: 12px;
+  width: calc(100% - 70px);
+  height: 50px;
+  margin: 0 20px 20px 0;
+  background-color: #d8d8d8;
+  text-indent: 20px;
+}
+form.search-form a.account {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+/*
 	RECIPE CARD COMPONENT
 	/////////////////////////////////////////////////////////////////////////////////////////////
 */
