@@ -3,7 +3,7 @@ import FilterTag from './FilterTag';
 
 const RecipeCard = (props) => {
 	return (
-		<a className="card recipe-card">
+		<a className="card recipe-card" href={props.recipeLink}>
 			<div className="col-container">
 				<div className="col">
 					<img className="img card recipe-img" src={props.recipeImg} />
