@@ -38,6 +38,12 @@ div.container {
 	@include tablet {
 		margin: 40px;
 	}
+	
+	@include large-monitor {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .card {
@@ -61,13 +67,36 @@ form.search-form {
 		height: 50px;
 		margin: 0 20px 20px 0;
 		background-color: #d8d8d8;
+		border: 3px solid transparent;
+		box-sizing: border-box;
 		text-indent: 20px;
+		transition: 0.3s ease-out;
+		
+		@include tablet {
+			margin: 0 40px 40px 0;
+		}
 	}
 	
-	a.account {
+	input.search-bar:hover {
+		box-shadow: 0 0 4px 0 rgba(50, 50, 50, 1);
+	}
+	
+	input.search-bar:focus {
+		outline: none;
+		border: 3px solid black;
+	}
+	
+	div.account {
 		width: 50px;
 		height: 50px;
+		box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
 		overflow: hidden;
+		cursor: pointer;
+		transition: 0.3s ease-out;
+	}
+	
+	div.account:hover {
+		box-shadow: 0 0 4px 0 rgba(50, 50, 50, 1);
 	}
 }
 
@@ -108,6 +137,7 @@ div.recipe-grid {
 				img.recipe-img {
 					width: 188px;
 					margin-left: -60px;
+					position: relative;
 					transition: 0.3s ease-in-out;
 				}
 				
