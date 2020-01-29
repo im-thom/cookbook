@@ -13,9 +13,9 @@ class SearchBar extends React.Component {
 		return (
 			<form onSubmit={this.onFormSubmit} className="search-form">
 				<input className="card search-bar" type="text" value={this.state.term} onChange={e => this.setState({ term: e.target.value })}/>
-				<a className="card account" href="#">
-					<img className="img account-img" src="../images/account.jpg" />
-				</a>
+				<div className="card account">
+					<img className="img account-img" src={this.props.accountImage} />
+				</div>
 			</form>
 		);
 	}

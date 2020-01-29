@@ -6,7 +6,9 @@ import FilterTag from './components/FilterTag';
 const App = () => {
 	return (
 		<div className="container">
-			<SearchBar />
+			<SearchBar 
+				accountImage={"../images/account.jpg"}
+			/>
 			<div className="recipe-grid">
 				<RecipeCard
 					recipeName="Recipe Name"
