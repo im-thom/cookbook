@@ -2,9 +2,9 @@ import React from 'react';
 
 const FilterTag = (props) => {
 	return (
-		<a className="card filter-tag" href="#">
+		<span className="card filter-tag" href="#" key={props.key}>
 			{props.tagName}
-		</a>
+		</span>
 	);
 };
 
