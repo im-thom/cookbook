@@ -15,14 +15,8 @@ const RecipeCard = (props) => {
 					</div>
 				</div>
 			</div>
-			<div className="filters">
-				<FilterTag
-					tagName="amer."
-				/>
-				<FilterTag
-					tagName="$$$"
-				/>
-			</div>
+			
+			{props.children}
 		</a>
 	);
 };
