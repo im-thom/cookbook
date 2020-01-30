@@ -172,25 +172,19 @@ div.recipe-grid {
 	FILTER TAG COMPONENT
 	/////////////////////////////////////////////////////////////////////////////////////////////
 */
-
-div.filters {
-	margin-top: 15px;
-	display: flex;
-	flex-direction: row;
-    align-items: center;
-    justify-content: flex-start; 
+ 
 	
-	a.filter-tag {
-		color: #fff;
-		font-size: 12px;
-		padding: 10px;
-		margin-right: 10px;
-		background-color: gray;
-		opacity: 0.8;
-		transition: 0.3s ease-in-out;
-	}
-	
-	a.filter-tag:hover {
-		opacity: 1;
-	}
+span.filter-tag {
+	color: #fff;
+	font-size: 12px;
+	padding: 10px;
+	margin-right: 10px;
+	background-color: gray;
+	opacity: 0.8;
+	transition: 0.3s ease-in-out;
 }
+
+span.filter-tag:hover {
+	opacity: 1;
+}
+
