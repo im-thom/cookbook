@@ -188,3 +188,18 @@ span.filter-tag:hover {
 	opacity: 1;
 }
 
+/*
+	MENU
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.menu-overlay {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #000;
+	opacity: 0.7;
+	width: 75%;
+	height: 100vh;
+}
+
