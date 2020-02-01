@@ -1,7 +1,15 @@
+@import "breakpoints";
+
+/*
+	RESET DEFAULTS
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
 * {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	font-family: sans-serif;
 }
 
 a {
@@ -12,3 +20,186 @@ a {
 ol, ul {
 	list-style: none;
 }
+
+/*
+	GLOBAL STYLING
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+img {
+	width: 100%;
+	height: auto;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+div.container {
+	margin: 20px;
+	
+	@include tablet {
+		margin: 40px;
+	}
+	
+	@include large-monitor {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.card {
+	background-color: inherit;
+	border-radius: 10px;
+}
+
+/*
+	SEARCH BAR STYLING
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+form.search-form {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	
+	input.search-bar {
+		font-size: 12px;
+		width: calc(100% - 70px);
+		height: 50px;
+		margin: 0 20px 20px 0;
+		background-color: #d8d8d8;
+		border: 3px solid transparent;
+		box-sizing: border-box;
+		text-indent: 20px;
+		transition: 0.3s ease-out;
+		
+		@include tablet {
+			margin: 0 40px 40px 0;
+		}
+	}
+	
+	input.search-bar:hover {
+		box-shadow: 0 0 4px 0 rgba(50, 50, 50, 1);
+	}
+	
+	input.search-bar:focus {
+		outline: none;
+		border: 3px solid black;
+	}
+	
+	div.account {
+		width: 50px;
+		height: 50px;
+		box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+		overflow: hidden;
+		cursor: pointer;
+		transition: 0.3s ease-out;
+	}
+	
+	div.account:hover {
+		box-shadow: 0 0 4px 0 rgba(50, 50, 50, 1);
+	}
+}
+
+/*
+	RECIPE CARD COMPONENT
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+div.recipe-grid {
+	display: grid;
+	grid-gap: 20px;
+    grid-template-columns: 1fr;
+	
+	@include tablet {
+		grid-gap: 40px;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	@include desktop {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	
+	a.recipe-card {
+		width: calc(100% - 80px);
+		margin-left: 40px;
+		padding: 20px;
+		background-color: #d8d8d8;
+		position: relative;
+		transition: 0.3s ease-in-out;
+		
+		div.col-container {
+			display: flex;
+		    flex-direction: row;
+			align-items: flex-end;
+			
+			div.col {
+				
+				img.recipe-img {
+					width: 188px;
+					margin-left: -60px;
+					position: relative;
+					transition: 0.3s ease-in-out;
+				}
+				
+				h2.recipe-name {
+					font-size: 24px;
+					margin-bottom: 20px;
+				}
+				
+				div.recipe-info {
+					display: flex;
+				}
+			}
+			
+			#recipe-content {
+				width: 50%;
+				margin-left: 20px;
+			}
+		}
+	}
+	
+	a.recipe-card:hover {
+		width: calc(100% - 40px);
+		margin-left: 0px;
+	}
+	
+	a.recipe-card:hover > div.col-container > div.col > img.recipe-img {
+		margin-left: 0;
+	}
+}
+
+/*
+	FILTER TAG COMPONENT
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+ 
+	
+span.filter-tag {
+	color: #fff;
+	font-size: 12px;
+	padding: 10px;
+	margin-right: 10px;
+	background-color: gray;
+	opacity: 0.8;
+	transition: 0.3s ease-in-out;
+}
+
+span.filter-tag:hover {
+	opacity: 1;
+}
+
+/*
+	MENU
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.menu-overlay {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #000;
+	opacity: 0.7;
+	width: 75%;
+	height: 100vh;
+}
+
