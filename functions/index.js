@@ -32,15 +32,14 @@ exports.get_recipes = functions.https.onRequest(async (req, res) => {
     }
 })
 
-// exports.get_recipes = functions.firestore.database.collection('recipes').get()
 
-// exports.get_all_recipes = functions.https.onCall( async (request, response) => {
-//     try {
-//         const recipes = await db.collection('recipes').get()
-//         console.log(recipes)
-//         response.send(recipes)
-//     } catch (error) {
-//         response.send(error)
-//         return
-//     }
-// });
+exports.create_new_recipe = functions.https.onRequest(async (req, res) => {
+    try {
+        let setDoc = await db.collection('recipes').add({
+            name: req.body.name
+        });
+        res.send(`Successfully added ${req.body.name} to database.`)
+    } catch (error) {
+        res.send(`Unable to add ${req.body.name} to database: ${error}`)
+    }
+})
