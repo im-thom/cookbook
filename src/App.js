@@ -1,25 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import SearchBar from "./components/SearchBar";
 import RecipeCard from "./components/RecipeCard";
 import FilterTag from "./components/FilterTag";
 import axios from "axios";
 
-import LandingPage from "./pages/LandingPage"
-import SignInPage from "./pages/SignInPage"
+import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
+import HomePage from "./pages/HomePage";
+import ForgotPasswordPage from "./components/ForgotPassword"
+
 import * as ROUTES from "./constants/routes";
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import withAuthentication from "./components/session/withAuthentication";
 
-
-const App = () => (
-  <Router>
-    <Route exact path={ROUTES.LANDING} component={LandingPage} />
-    <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-  </Router>
-
-)
+const App = (props) => {
+  console.log("PROPS IN APP:", props)
+  return (
+      <Router>
+        {/* <div>{this.state.authUser ? "CURRENTLY SIGNED IN" : "SIGNED OUT"}</div> */}
+        <Route exact path={ROUTES.HOME} component={HomePage} />
+        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+        <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+        <Route path={ROUTES.PASSWORD_RESET} component={ForgotPasswordPage} />
+      </Router>
+  );
+};
 
 // class App extends React.Component {
 //   state = {
@@ -158,4 +163,4 @@ const App = () => (
 // 	},
 // ];
 
-export default App;
+export default withAuthentication(App);
