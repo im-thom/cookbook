@@ -15,6 +15,8 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.get_recipes = functions.https.onRequest(async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+
     try {
         // Create a snapshot with the entire recipes collection
         const snapshot = await db.collection('recipes').get();
