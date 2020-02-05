@@ -14,17 +14,33 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import withAuthentication from "./components/session/withAuthentication";
 
 const App = (props) => {
-  console.log("PROPS IN APP:", props)
+  console.log("PROPS IN APP:", props.firebase.auth.currentUser)
+
+  const currentUser = props.firebase.auth.currentUser
   return (
       <Router>
         {/* <div>{this.state.authUser ? "CURRENTLY SIGNED IN" : "SIGNED OUT"}</div> */}
-        <Route exact path={ROUTES.HOME} component={HomePage} />
+        <Route exact path={ROUTES.HOME} component={currentUser ? HomePage : SignInPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.PASSWORD_RESET} component={ForgotPasswordPage} />
       </Router>
   );
 };
+
+// class App extends Component {
+//   render() {
+//     return (
+//       <Router>
+//         {/* <div>{this.state.authUser ? "CURRENTLY SIGNED IN" : "SIGNED OUT"}</div> */}
+//         <Route exact path={ROUTES.HOME} component={ HomePage} />
+//         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+//         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+//         <Route path={ROUTES.PASSWORD_RESET} component={ForgotPasswordPage} />
+//       </Router>
+//     )
+//   }
+// }
 
 // class App extends React.Component {
 //   state = {
