@@ -201,5 +201,32 @@ span.filter-tag:hover {
 	opacity: 0.7;
 	width: 75%;
 	height: 100vh;
+
+	.navbar-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		.navbar-link {
+			font-size: 24px;
+			color: #fff;
+			text-align: center;
+			margin: 40px;
+			cursor: pointer;
+		}
+	}
+
+	.exit-btn-container {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		cursor: pointer;
+
+		.fas.fa-times {
+			color: #fff;
+			font-size: 24px;
+		}
+	}
 }
 
