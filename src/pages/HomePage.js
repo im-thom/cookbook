@@ -99,6 +99,10 @@ class HomePage extends React.Component {
 				<div className="exit-btn-container" onClick={() => this.toggleMenu()}>
 					<i class="fas fa-times"></i>
 				</div>
+				<div className="slide-container">
+					<div className="slide-lg"></div>
+					<div className="slide-sm"></div>
+				</div>
 			</div>
 		}
       </>
