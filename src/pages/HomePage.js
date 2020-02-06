@@ -6,7 +6,7 @@ import axios from "axios";
 import FilterTag from "../components/FilterTag";
 import RecipeCard from "../components/RecipeCard";
 import SearchBar from "../components/SearchBar";
-import Navbar from "../components/nav"
+import Navbar from "../components/nav/NavBar";
 // const HomePage = () => {
 //   return (
 //     <AuthUserContext.Consumer>
@@ -69,6 +69,7 @@ class HomePage extends React.Component {
       return (
         <RecipeCard
           key={i}
+          id={recipe.id}
           recipeName={recipe.name}
           recipeImg={recipe.image}
           recipeCookTime={recipe.duration.cook}
@@ -92,9 +93,14 @@ class HomePage extends React.Component {
           />
           <div className="recipe-grid">{this.recipeTiles()}</div>
         </div>
-        {this.state.menuIsOpen && <div className="menu-overlay">
-            <Navbar />
-          </div>}
+		{
+			this.state.menuIsOpen && <div className="menu-overlay">
+				<Navbar />
+				<div className="exit-btn-container" onClick={() => this.toggleMenu()}>
+					<i class="fas fa-times"></i>
+				</div>
+			</div>
+		}
       </>
     );
   }
