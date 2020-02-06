@@ -30,7 +30,12 @@ exports.get_recipes = functions.https.onRequest(async (req, res) => {
       const recipes = [];
       // Loop through each document and push data to the empty recipes array
       snapshot.forEach(recipe => {
-        recipes.push(recipe.data());
+        // Create a new recipe and push all data to it
+        newRecipe = recipe.data();
+        // Adding a property of id, passing down the id of the database document
+        newRecipe.id = recipe.id
+        // Push newly constructed recipe to the recipes array
+        recipes.push(newRecipe);
       });
       // Send the recipes array in a response object
       res.send(recipes);
