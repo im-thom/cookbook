@@ -7,7 +7,8 @@ import axios from "axios";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import HomePage from "./pages/HomePage";
-import ForgotPasswordPage from "./components/ForgotPassword"
+import RecipePage from "./pages/RecipePage";
+import ForgotPasswordPage from "./components/ForgotPassword";
 
 import * as ROUTES from "./constants/routes";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -23,6 +24,7 @@ const App = (props) => {
         <Route exact path={ROUTES.HOME} component={currentUser ? HomePage : SignInPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+		<Route path={"/recipe/:id/:recipeName"} component={RecipePage} />
         <Route path={ROUTES.PASSWORD_RESET} component={ForgotPasswordPage} />
       </Router>
   );
