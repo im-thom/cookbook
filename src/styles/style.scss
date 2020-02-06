@@ -198,9 +198,11 @@ span.filter-tag:hover {
 	right: 0;
 	top: 0;
 	background-color: #000;
-	opacity: 0.7;
+	border-radius: 10px 0 0 10px;
+	opacity: 0.9;
 	width: 75%;
 	height: 100vh;
+	transition: 0.3s ease-in-out;
 
 	.navbar-container {
 		position: absolute;
@@ -214,6 +216,26 @@ span.filter-tag:hover {
 			text-align: center;
 			margin: 40px;
 			cursor: pointer;
+			position: relative;
+			transition: 0.3s ease-in-out;
+		}
+
+		.navbar-link::after {
+			content: "";
+			width: 0%;
+			height: 50%;
+			background-color: gray;
+			border-radius: 10px;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			transform: translateX(-50%);
+			z-index: -1;
+			transition: 0.3s ease-in-out;
+		}
+
+		.navbar-link:hover::after {
+			width: 120%;
 		}
 	}
 
@@ -226,6 +248,30 @@ span.filter-tag:hover {
 		.fas.fa-times {
 			color: #fff;
 			font-size: 24px;
+		}
+	}
+
+	.slide-container {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+
+		.slide-lg {
+			background-color: #979797;
+			height: 40px;
+			width: 2px;
+			border-radius: 10px;
+		}
+
+		.slide-sm {
+			background-color: #979797;
+			height: 20px;
+			width: 2px;
+			border-radius: 10px;
+			margin-left: 10px;
 		}
 	}
 }
