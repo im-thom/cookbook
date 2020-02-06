@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import FilterTag from './FilterTag';
 
 const RecipeCard = (props) => {
 	return (
-		<a className="card recipe-card" href={props.recipeLink}>
+		<Link className="card recipe-card" to={`/recipe/${props.id}/${props.recipeName}`}>
 			<div className="col-container">
 				<div className="col">
 					<img className="img card recipe-img" src={props.recipeImg} />
@@ -17,7 +18,7 @@ const RecipeCard = (props) => {
 			</div>
 			
 			{props.children}
-		</a>
+		</Link>
 	);
 };
 
