@@ -6,11 +6,11 @@ const MenuButton = (props) =>  {
 		<>
 			<AuthUserContext.Consumer>
 				{authUser => (authUser ?
-					<MenuButtonWithoutAuth /> :
 					<MenuButtonWithAuth 
 						toggleMenu = {props.toggleMenu}
 						accountImage = {props.accountImage}
-					/>
+					/> :
+					<MenuButtonWithoutAuth />
 				)}
 			</AuthUserContext.Consumer>
 		</>
