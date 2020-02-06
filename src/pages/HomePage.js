@@ -7,6 +7,8 @@ import FilterTag from "../components/FilterTag";
 import RecipeCard from "../components/RecipeCard";
 import SearchBar from "../components/SearchBar";
 import Navbar from "../components/nav/NavBar";
+import SliderIcon from "../components/nav/SliderIcon";
+
 // const HomePage = () => {
 //   return (
 //     <AuthUserContext.Consumer>
@@ -99,9 +101,8 @@ class HomePage extends React.Component {
 				<div className="exit-btn-container" onClick={() => this.toggleMenu()}>
 					<i class="fas fa-times"></i>
 				</div>
-				<div className="slide-container">
-					<div className="slide-lg"></div>
-					<div className="slide-sm"></div>
+				<div className="slide-container" id="slide-container-acc-navbar">
+					<SliderIcon />
 				</div>
 			</div>
 		}

@@ -1,3 +1,8 @@
+/*
+	IMPORTS
+	/////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
 @import "breakpoints";
 
 /*
@@ -224,7 +229,7 @@ span.filter-tag:hover {
 			content: "";
 			width: 0%;
 			height: 50%;
-			background-color: gray;
+			background-color: #979797;
 			border-radius: 10px;
 			position: absolute;
 			left: 50%;
@@ -255,9 +260,6 @@ span.filter-tag:hover {
 		display: flex;
 		align-items: center;
 		position: absolute;
-		left: 20px;
-		top: 50%;
-		transform: translateY(-50%);
 
 		.slide-lg {
 			background-color: #979797;
@@ -273,6 +275,12 @@ span.filter-tag:hover {
 			border-radius: 10px;
 			margin-left: 10px;
 		}
+	}
+
+	#slide-container-acc-navbar {
+		left: 20px;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }
 
