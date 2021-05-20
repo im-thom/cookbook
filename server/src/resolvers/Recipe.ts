@@ -5,5 +5,7 @@ import { MyContext } from "../types";
 @Resolver()
 export class RecipeResolver {
   @Query(() => [Recipe])
-  getRecipes(@Ctx() { em }: MyContext): Promise<Recipe[0]> {}
+  getRecipes(@Ctx() {}: MyContext) {
+    return [];
+  }
 }
