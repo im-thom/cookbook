@@ -1,22 +1,29 @@
-import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
-import { ObjectType, Field } from "type-graphql";
+import { ObjectType, Field, Int } from "type-graphql";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  BaseEntity,
+} from "typeorm";
 
 @ObjectType()
 @Entity()
-export class Recipe {
-  @Field()
-  @PrimaryKey()
-  id!: string;
+export class Recipe extends BaseEntity {
+  @Field(() => Int)
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Field()
-  @Property({ type: "text" })
-  title!: string;
+  @Column({ type: "text" })
+  title: string;
 
   @Field(() => String)
-  @Property({ type: "date", onUpdate: () => new Date() })
+  @CreateDateColumn()
   createdAt = new Date();
 
   @Field(() => String)
-  @Property({ type: "text" })
-  modifiedAt = new Date();
+  @UpdateDateColumn()
+  updatedAt = new Date();
 }
