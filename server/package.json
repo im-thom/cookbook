@@ -2,12 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "dev": "nodemon dist/app.js",
-    "start": "node dist/app.js",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "apollo-server": "^2.24.1",
     "apollo-server-express": "^2.24.1",
     "class-validator": "^0.13.1",
+    "dataloader": "^2.0.0",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "pg": "^8.6.0",
