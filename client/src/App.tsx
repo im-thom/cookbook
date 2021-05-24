@@ -1,5 +1,4 @@
 import { Layout } from "antd";
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Recipe from "./components/Recipe";

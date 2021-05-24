@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { useQuery } from "@apollo/client";
 import { getRecipeById } from "../../api/recipes";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-type Recipe = {
+type RecipeProps = {
   id: number;
   title: String;
 };
 
 type Props = {
-  recipes?: [Recipe];
+  recipes?: [RecipeProps];
 };
 
 const Recipe: FC<Props> = (props: Props): JSX.Element => {
